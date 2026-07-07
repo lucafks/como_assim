@@ -60,6 +60,17 @@
 
         .content { position: relative; z-index: 10; text-align: center; padding: 20px; }
 
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #1D2D44;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+
         /* Badge - Dourado (15%) */
         .badge {
             display: inline-block;
@@ -78,7 +89,7 @@
         /* Título - Azul Marinho (10%) */
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-size: clamp(1.6rem, 7vw, 5rem);
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 20px;
@@ -252,12 +263,12 @@
             .countdown-label { font-size: 0.65rem; letter-spacing: 2px; }
 
             .event-section { padding: 60px 15px; }
-            .event-grid { grid-template-columns: 1fr; gap: 15px; }
-            .event-card { padding: 25px 20px; }
-            .event-card h3 { font-size: 0.75rem; }
-            .event-card p { font-size: 1rem; }
-            .event-icon { width: 60px; height: 60px; font-size: 1.5rem; }
-            .event-msg { font-size: 1rem; }
+            .event-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+            .event-card { padding: 25px 15px; }
+            .event-card h3 { font-size: 0.65rem; letter-spacing: 2px; }
+            .event-card p { font-size: 0.85rem; }
+            .event-icon { width: 50px; height: 50px; font-size: 1.3rem; margin-bottom: 15px; }
+            .event-msg { font-size: 0.95rem; }
 
             .map-section { padding: 0 15px 60px; }
             .map-container iframe { height: 250px; border-radius: 15px; }
@@ -282,12 +293,30 @@
             .countdown-value { font-size: 1.6rem; }
             .badge { font-size: 0.7rem; padding: 8px 20px; letter-spacing: 2px; }
         }
+
+        /* Desktop / Large screens */
+        @media (min-width: 1200px) {
+            .hero { min-height: 100vh; }
+            .hero-logo { max-width: 550px; }
+            .hero-title { font-size: 4rem; letter-spacing: 12px; }
+            .slogan { font-size: 1.5rem; max-width: 700px; }
+            .countdown-section, .event-section, .gallery-section { padding: 120px 40px; }
+            .countdown-item { padding: 50px 30px; }
+            .countdown-value { font-size: 4.5rem; }
+            .event-grid { max-width: 1100px; gap: 30px; }
+            .event-card { padding: 50px 30px; }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; max-width: 1400px; }
+            .map-container iframe { height: 450px; }
+            .footer { padding: 100px 40px; }
+            .footer-quote { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
     <section class="hero">
         <div class="particles" id="particles"></div>
         <div class="content">
+            <span class="hero-title">CONVITE ESPECIAL</span>
             <img src="media/logo.jpeg" alt="Logo Reencontro 2026 - UPE Enfermagem" class="hero-logo">
             <p class="slogan">Vamos nos reunir novamente e reviver os melhores momentos da nossa jornada</p>
         </div>
@@ -311,7 +340,6 @@
             <div class="event-card reveal"><div class="event-icon">👗</div><h3>Estilo</h3><p>Elegante Casual</p> <p style="font-size: 0.85rem; color: #9AB3B5; margin-top: 8px;">Te esperamos vestidos de alegria e boas energias 🙏🏻</p></div>
         </div>
         <div class="event-messages reveal">
-            <p class="event-msg">Sua melhor versão é você que faz 🥰</p>
         </div>
     </section>
 
@@ -330,9 +358,8 @@
     </section>
 
     <footer class="footer">
-        <p class="footer-quote reveal">"Quem <span>cuidou</span> junto, <span>curou</span> junto"</p>
         <p style="margin-top: 15px; color: #C5A059; font-style: italic;">"Cada um sabe a dor e a delícia de ser o que é..."</p>
-        <p style="margin-top: 20px;">Com carinho para toda a turma de Enfermagem</p>
+        <p style="margin-top: 20px;">Com carinho para toda a turma de Enfermagem 2006.2</p>
     </footer>
 
     <div class="modal" id="modal">
